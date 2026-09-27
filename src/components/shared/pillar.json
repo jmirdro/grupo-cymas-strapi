@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_pillars",
+  "info": { "displayName": "Pillar", "icon": "layout" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "icon": {
+      "type": "enumeration",
+      "enum": ["management", "trust", "network", "growth"],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_teams",
+  "info": { "displayName": "Team", "icon": "users" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "members": { "type": "component", "component": "shared.team-member", "repeatable": true }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_shared_service_items",
+  "info": { "displayName": "ServiceItem", "icon": "briefcase" },
+  "options": {},
+  "attributes": {
+    "name": { "type": "string", "required": true }
+  }
+}

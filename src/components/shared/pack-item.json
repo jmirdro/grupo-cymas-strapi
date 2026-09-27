@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_pack_items",
+  "info": { "displayName": "PackItem", "icon": "box" },
+  "options": {},
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "features": { "type": "json", "required": true },
+    "highlighted": { "type": "boolean", "required": true, "default": false },
+    "compact": { "type": "boolean", "required": true, "default": false },
+    "featured": { "type": "boolean", "required": true, "default": false },
+    "cta": { "type": "component", "component": "shared.link", "repeatable": false, "required": true }
+  }
+}

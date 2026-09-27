@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_heroes",
+  "info": { "displayName": "Hero", "icon": "rocket" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "primaryCta": { "type": "component", "component": "shared.link", "repeatable": false, "required": true },
+    "secondaryCta": { "type": "component", "component": "shared.link", "repeatable": false, "required": true },
+    "cards": { "type": "media", "multiple": true, "allowedTypes": ["images"] }
+  }
+}

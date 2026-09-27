@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_musician_details",
+  "info": { "displayName": "MusicianDetail", "icon": "user" },
+  "options": {},
+  "attributes": {
+    "reviewsEyebrow": { "type": "string", "required": true },
+    "contactTitleTemplate": { "type": "string", "required": true },
+    "contactDescriptionTemplate": { "type": "text", "required": true },
+    "contactEmailLabel": { "type": "string", "required": true },
+    "contactMessageLabel": { "type": "string", "required": true },
+    "contactSubmitLabel": { "type": "string", "required": true },
+    "faqEyebrow": { "type": "string", "required": true },
+    "faqTitle": { "type": "string", "required": true },
+    "faqs": { "type": "component", "component": "shared.faq-item", "repeatable": true }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_legals",
+  "info": { "displayName": "Legal", "icon": "shield" },
+  "options": {},
+  "attributes": {
+    "privacyTitle": { "type": "string", "required": true },
+    "termsTitle": { "type": "string", "required": true },
+    "text": { "type": "text", "required": true }
+  }
+}

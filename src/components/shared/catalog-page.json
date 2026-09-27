@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_shared_catalog_pages",
+  "info": { "displayName": "CatalogPage", "icon": "layout" },
+  "options": {},
+  "attributes": {
+    "eyebrow": { "type": "string", "required": true },
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "seo": { "type": "component", "component": "shared.seo", "repeatable": false, "required": true }
+  }
+}

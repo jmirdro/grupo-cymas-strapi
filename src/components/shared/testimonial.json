@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_shared_testimonials",
+  "info": { "displayName": "Testimonial", "icon": "quote" },
+  "options": {},
+  "attributes": {
+    "quote": { "type": "text", "required": true },
+    "authorName": { "type": "string", "required": true },
+    "authorRole": { "type": "string", "required": true },
+    "authorAvatar": { "type": "media", "multiple": false, "allowedTypes": ["images"], "required": true }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_faq_sections",
+  "info": { "displayName": "FaqSection", "icon": "question" },
+  "options": {},
+  "attributes": {
+    "eyebrow": { "type": "string", "required": true },
+    "title": { "type": "string", "required": true },
+    "items": { "type": "component", "component": "shared.faq-item", "repeatable": true }
+  }
+}

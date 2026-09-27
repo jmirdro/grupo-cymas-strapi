@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_contacts",
+  "info": { "displayName": "Contact", "icon": "envelope" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "emailLabel": { "type": "string", "required": true },
+    "messageLabel": { "type": "string", "required": true },
+    "submitLabel": { "type": "string", "required": true }
+  }
+}

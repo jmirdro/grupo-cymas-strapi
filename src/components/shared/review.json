@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_reviews",
+  "info": { "displayName": "Review", "icon": "star" },
+  "options": {},
+  "attributes": {
+    "quote": { "type": "text", "required": true },
+    "authorName": { "type": "string", "required": true },
+    "authorRole": { "type": "string", "required": true }
+  }
+}

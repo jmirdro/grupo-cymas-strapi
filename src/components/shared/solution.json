@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_solutions",
+  "info": { "displayName": "Solution", "icon": "puzzle" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "pillars": { "type": "component", "component": "shared.pillar", "repeatable": true }
+  }
+}

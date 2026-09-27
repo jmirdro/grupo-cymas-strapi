@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_shared_musician_rosters",
+  "info": { "displayName": "MusicianRoster", "icon": "users" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "catalogHref": { "type": "string", "required": true }
+  }
+}

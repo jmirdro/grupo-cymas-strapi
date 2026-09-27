@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "musicians",
+  "info": {
+    "singularName": "musician",
+    "pluralName": "musicians",
+    "displayName": "Musician",
+    "description": "Represented artists in the catalog."
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "instrument": { "type": "string", "required": true },
+    "photo": { "type": "media", "multiple": false, "allowedTypes": ["images"], "required": true },
+    "bio": { "type": "text", "required": true },
+    "experience": { "type": "json", "required": true },
+    "media": { "type": "component", "component": "shared.media-item", "repeatable": true },
+    "reviews": { "type": "component", "component": "shared.review", "repeatable": true },
+    "seo": { "type": "component", "component": "shared.seo", "repeatable": false }
+  }
+}

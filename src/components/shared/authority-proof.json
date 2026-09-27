@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_authority_proofs",
+  "info": { "displayName": "AuthorityProof", "icon": "chart-bubble" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "stats": { "type": "component", "component": "shared.stat", "repeatable": true }
+  }
+}

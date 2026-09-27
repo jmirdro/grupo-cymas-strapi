@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "Landing Page",
+    "description": "Singleton content for the main site landing page."
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": { "type": "component", "component": "shared.seo", "repeatable": false, "required": true },
+    "hero": { "type": "component", "component": "shared.hero", "repeatable": false, "required": true },
+    "authorityProof": { "type": "component", "component": "shared.authority-proof", "repeatable": false, "required": true },
+    "musicianRoster": { "type": "component", "component": "shared.musician-roster", "repeatable": false, "required": true },
+    "problem": { "type": "component", "component": "shared.problem", "repeatable": false, "required": true },
+    "solution": { "type": "component", "component": "shared.solution", "repeatable": false, "required": true },
+    "catalog": { "type": "component", "component": "shared.catalog", "repeatable": false, "required": true },
+    "testimonials": { "type": "component", "component": "shared.testimonial", "repeatable": true },
+    "contact": { "type": "component", "component": "shared.contact", "repeatable": false, "required": true },
+    "team": { "type": "component", "component": "shared.team", "repeatable": false, "required": true },
+    "catalogPage": { "type": "component", "component": "shared.catalog-page", "repeatable": false, "required": true },
+    "musicianDetail": { "type": "component", "component": "shared.musician-detail", "repeatable": false, "required": true },
+    "faq": { "type": "component", "component": "shared.faq-section", "repeatable": false, "required": true },
+    "legal": { "type": "component", "component": "shared.legal", "repeatable": false, "required": true },
+    "ctaBanner": { "type": "component", "component": "shared.cta-banner", "repeatable": false, "required": true },
+    "sections": { "type": "component", "component": "shared.sections", "repeatable": false, "required": true },
+    "whatsapp": { "type": "component", "component": "shared.whatsapp", "repeatable": false, "required": true }
+  }
+}

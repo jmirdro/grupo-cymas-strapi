@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_sections",
+  "info": { "displayName": "Sections", "icon": "eye" },
+  "options": {},
+  "attributes": {
+    "hero": { "type": "boolean", "required": true, "default": true },
+    "authorityProof": { "type": "boolean", "required": true, "default": true },
+    "musicianRoster": { "type": "boolean", "required": true, "default": true },
+    "problem": { "type": "boolean", "required": true, "default": true },
+    "solution": { "type": "boolean", "required": true, "default": true },
+    "catalog": { "type": "boolean", "required": true, "default": true },
+    "testimonials": { "type": "boolean", "required": true, "default": true },
+    "contact": { "type": "boolean", "required": true, "default": true },
+    "team": { "type": "boolean", "required": true, "default": true },
+    "faq": { "type": "boolean", "required": true, "default": true },
+    "ctaBanner": { "type": "boolean", "required": true, "default": true }
+  }
+}

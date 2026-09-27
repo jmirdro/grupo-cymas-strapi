@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_problems",
+  "info": { "displayName": "Problem", "icon": "alert" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "problems": { "type": "component", "component": "shared.problem-item", "repeatable": true }
+  }
+}

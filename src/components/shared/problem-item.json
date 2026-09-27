@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_problem_items",
+  "info": { "displayName": "ProblemItem", "icon": "exclamation" },
+  "options": {},
+  "attributes": {
+    "text": { "type": "string", "required": true },
+    "icon": {
+      "type": "enumeration",
+      "enum": ["contract", "calendar", "money", "phone", "shield", "call", "inbox", "clock"],
+      "required": true
+    }
+  }
+}

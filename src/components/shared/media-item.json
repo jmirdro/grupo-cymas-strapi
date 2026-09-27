@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_media_items",
+  "info": { "displayName": "MediaItem", "icon": "picture" },
+  "options": {},
+  "attributes": {
+    "type": { "type": "enumeration", "enum": ["image", "video"], "required": true },
+    "url": { "type": "string", "required": true },
+    "alt": { "type": "string", "required": true }
+  }
+}

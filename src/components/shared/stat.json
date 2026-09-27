@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_stats",
+  "info": { "displayName": "Stat", "icon": "chart-bar" },
+  "options": {},
+  "attributes": {
+    "direction": { "type": "enumeration", "enum": ["up", "down"], "required": true },
+    "label": { "type": "string", "required": true },
+    "icon": {
+      "type": "enumeration",
+      "enum": ["documentDuplicate", "mic", "users", "currencyEuro", "megaphone", "rocketLaunch", "bellSlash", "briefcase"],
+      "required": true
+    }
+  }
+}

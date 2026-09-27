@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_catalogs",
+  "info": { "displayName": "Catalog", "icon": "layer" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "services": { "type": "component", "component": "shared.service-item", "repeatable": true },
+    "packs": { "type": "component", "component": "shared.pack-item", "repeatable": true },
+    "launchOffer": { "type": "text" }
+  }
+}
