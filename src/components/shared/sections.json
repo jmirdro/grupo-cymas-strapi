@@ -12,6 +12,7 @@
     "testimonials": { "type": "boolean", "required": true, "default": true },
     "contact": { "type": "boolean", "required": true, "default": true },
     "team": { "type": "boolean", "required": true, "default": true },
+    "partners": { "type": "boolean", "required": true, "default": true },
     "faq": { "type": "boolean", "required": true, "default": true },
     "ctaBanner": { "type": "boolean", "required": true, "default": true }
   }

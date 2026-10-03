@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_shared_partners",
+  "info": { "displayName": "Partners", "icon": "handshake" },
+  "options": {},
+  "attributes": {
+    "eyebrow": { "type": "string", "required": true, "default": "Colaboradores" },
+    "items": { "type": "component", "component": "shared.partner", "repeatable": true }
+  }
+}

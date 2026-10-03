@@ -18,6 +18,7 @@ const DEEP_POPULATE = {
   testimonials: { populate: ['authorAvatar'] },
   contact: true,
   team: { populate: { members: { populate: ['photo'] } } },
+  partners: { populate: ['items'] },
   catalogPage: { populate: ['seo'] },
   musicianDetail: { populate: ['faqs'] },
   faq: { populate: ['items'] },

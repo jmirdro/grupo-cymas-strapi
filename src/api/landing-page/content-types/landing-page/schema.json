@@ -20,6 +20,7 @@
     "testimonials": { "type": "component", "component": "shared.testimonial", "repeatable": true },
     "contact": { "type": "component", "component": "shared.contact", "repeatable": false, "required": true },
     "team": { "type": "component", "component": "shared.team", "repeatable": false, "required": true },
+    "partners": { "type": "component", "component": "shared.partners", "repeatable": false, "required": true },
     "catalogPage": { "type": "component", "component": "shared.catalog-page", "repeatable": false, "required": true },
     "musicianDetail": { "type": "component", "component": "shared.musician-detail", "repeatable": false, "required": true },
     "faq": { "type": "component", "component": "shared.faq-section", "repeatable": false, "required": true },
