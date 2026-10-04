@@ -12,6 +12,7 @@
   "attributes": {
     "name": { "type": "string", "required": true },
     "instrument": { "type": "string", "required": true },
+    "rosterOrder": { "type": "integer" },
     "photo": { "type": "media", "multiple": false, "allowedTypes": ["images"], "required": true },
     "bio": { "type": "text", "required": true },
     "experience": { "type": "json", "required": true },
