@@ -1,7 +1,6 @@
 'use strict';
 
 const path = require('node:path');
-const os = require('node:os');
 const fs = require('node:fs/promises');
 const { isVideo, buildFfmpegArgs, runFfmpeg } = require('./utils/compress-video');
 
@@ -15,7 +14,11 @@ async function compressUploadedVideo(event, strapi) {
 
   const uploadsDir = path.join(strapi.dirs.static.public, 'uploads');
   const filePath = path.join(uploadsDir, `${data.hash}${data.ext}`);
-  const tmpPath = path.join(os.tmpdir(), `compressed-${data.hash}${data.ext}`);
+  // El temporal tiene que vivir en el MISMO volumen que uploads/: si va a
+  // os.tmpdir() (normalmente un disco distinto al volumen montado), el
+  // fs.rename() de más abajo falla con EXDEV y el archivo nunca se
+  // reemplaza, aunque ffmpeg haya funcionado bien.
+  const tmpPath = path.join(uploadsDir, `.tmp-compressed-${data.hash}${data.ext}`);
 
   try {
     await runFfmpeg(buildFfmpegArgs(filePath, tmpPath));

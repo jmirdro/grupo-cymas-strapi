@@ -8,7 +8,6 @@
 // Uso: node scripts/backfill-compress-media.js [--dry-run]
 
 const path = require('node:path');
-const os = require('node:os');
 const fs = require('node:fs/promises');
 const sharp = require('sharp');
 const { compileStrapi, createStrapi } = require('@strapi/strapi');
@@ -23,8 +22,16 @@ function isOptimizableImage(mime) {
   return OPTIMIZABLE_IMAGE_FORMATS.has(format);
 }
 
+// El temporal tiene que vivir en el MISMO directorio que el archivo final:
+// si va a os.tmpdir() (normalmente un disco distinto al volumen montado),
+// el fs.rename() de más abajo falla con EXDEV y el archivo nunca se
+// reemplaza, aunque la compresión en sí haya ido bien.
+function tmpPathFor(filePath) {
+  return path.join(path.dirname(filePath), `.tmp-backfill-${path.basename(filePath)}`);
+}
+
 async function compressVideoFile(filePath) {
-  const tmpPath = path.join(os.tmpdir(), `backfill-${path.basename(filePath)}`);
+  const tmpPath = tmpPathFor(filePath);
   await runFfmpeg(buildFfmpegArgs(filePath, tmpPath));
   const stat = await fs.stat(tmpPath);
   return { tmpPath, newBytes: stat.size };
@@ -32,7 +39,7 @@ async function compressVideoFile(filePath) {
 
 async function compressImageFile(filePath, mime) {
   const format = mime.split('/')[1];
-  const tmpPath = path.join(os.tmpdir(), `backfill-${path.basename(filePath)}`);
+  const tmpPath = tmpPathFor(filePath);
   await sharp(filePath)[format]({ quality: IMAGE_QUALITY }).toFile(tmpPath);
   const stat = await fs.stat(tmpPath);
   return { tmpPath, newBytes: stat.size };
@@ -82,22 +89,29 @@ async function run() {
         continue;
       }
 
-      savedBytes += originalBytes - newBytes;
-      touched += 1;
-      console.log(
-        `${dryRun ? '[dry-run] ' : ''}${file.hash}${file.ext}: ${(originalBytes / 1024 / 1024).toFixed(1)}MB -> ${(newBytes / 1024 / 1024).toFixed(1)}MB`
-      );
-
       if (dryRun) {
         await fs.unlink(tmpPath).catch(() => {});
+        savedBytes += originalBytes - newBytes;
+        touched += 1;
+        console.log(
+          `[dry-run] ${file.hash}${file.ext}: ${(originalBytes / 1024 / 1024).toFixed(1)}MB -> ${(newBytes / 1024 / 1024).toFixed(1)}MB`
+        );
         continue;
       }
 
+      // Solo se cuenta como comprimido DESPUÉS de confirmar que el archivo
+      // se reemplazó de verdad — si el rename falla, cae al catch de abajo
+      // y no se suma nada, en vez de reportar un éxito que no ocurrió.
       await fs.rename(tmpPath, filePath);
       await app.db.query('plugin::upload.file').update({
         where: { id: file.id },
         data: { size: newBytes / 1024 },
       });
+      savedBytes += originalBytes - newBytes;
+      touched += 1;
+      console.log(
+        `${file.hash}${file.ext}: ${(originalBytes / 1024 / 1024).toFixed(1)}MB -> ${(newBytes / 1024 / 1024).toFixed(1)}MB`
+      );
     } catch (err) {
       app.log.error(`Fallo comprimiendo ${filePath}: ${err.message}`);
       skipped += 1;
