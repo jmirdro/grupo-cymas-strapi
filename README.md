@@ -35,3 +35,28 @@ When developing locally this Strapi template will connect to the Postgres server
 
 - After your app is deployed, visit the `/admin` endpoint to create your admin user.
 - If you want to use npm with this project make sure you delete the `yarn.lock` file after you have ran `npm install`
+
+## 🎞️ Compresión de medios
+
+Las imágenes se comprimen automáticamente al subirlas (forzado en
+`src/index.js`, calidad 80 + variantes responsive). Los vídeos pasan por
+`ffmpeg` (~2 Mbps, máx. 1080p) vía un hook en el mismo archivo.
+
+**Requisito del servidor:** `ffmpeg` tiene que estar instalado como paquete
+del sistema — no es una dependencia de npm. En Railway ya está cubierto por
+`railpack.json` (`deploy.aptPackages`, el builder real del proyecto es
+Railpack, no Nixpacks). Fuera de Railway, instalarlo a mano
+(`apt install ffmpeg` en Debian/Ubuntu). Si no está presente, la subida
+sigue funcionando pero sin comprimir el vídeo (se registra el error en los
+logs, no rompe la subida).
+
+Para comprimir los archivos que ya estaban subidos antes de este cambio:
+
+```bash
+npm run backfill:media:dry-run   # solo muestra qué comprimiría, no toca nada
+npm run backfill:media           # lo aplica de verdad
+```
+
+Corre contra el disco local y la base de datos — ejecutar directamente en el
+servidor donde viven los archivos (vía `railway ssh` o, tras la migración,
+por SSH normal al VPS), no en local.

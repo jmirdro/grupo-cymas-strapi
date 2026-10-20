@@ -12,7 +12,9 @@
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "backfill:media": "node scripts/backfill-compress-media.js",
+    "backfill:media:dry-run": "node scripts/backfill-compress-media.js --dry-run"
   },
   "dependencies": {
     "@strapi/provider-upload-local": "5.54.0",
@@ -22,6 +24,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "sharp": "0.35.3",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {},
