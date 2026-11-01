@@ -5,6 +5,7 @@
   "attributes": {
     "privacyTitle": { "type": "string", "required": true },
     "termsTitle": { "type": "string", "required": true },
-    "text": { "type": "text", "required": true }
+    "privacyText": { "type": "text", "required": true },
+    "termsText": { "type": "text", "required": true }
   }
 }
